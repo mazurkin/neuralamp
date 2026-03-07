@@ -1,4 +1,4 @@
-# demucs environment
+# neural-amp-modeler environment
 
 Conda environment and bootstrap scripts for [NeuralAmp Modeler](https://github.com/sdatkinson/neural-amp-modeler)
 
