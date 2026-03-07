@@ -55,10 +55,15 @@ env-info:
 # -----------------------------------------------------------------------------
 
 .PHONY: run
+run: export PYTHONOPTIMIZE=1
+run: export PYTHONDONTWRITEBYTECODE=1
+run: export PYTHONUNBUFFERED=1
+run: export OMP_NUM_THREADS=1
+run: export CUDA_VISIBLE_DEVICES=0
 run:
 	@conda run --no-capture-output --live-stream --name "$(CONDA_ENV_NAME)" \
 		nam-full \
-			"$(ROOT)/nam_full_configs/data/single_pair.json" \
+			"$(ROOT)/nam_full_configs/data/default.json" \
 			"$(ROOT)/nam_full_configs/models/wavenet.json" \
-			"$(ROOT)/nam_full_configs/learning/demo.json" \
+			"$(ROOT)/nam_full_configs/learning/default.json" \
 			"$(ROOT)/work"
