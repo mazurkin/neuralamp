@@ -117,7 +117,7 @@ rsync-push:
 		--exclude='.pytest_cache' \
 		--exclude='.ipynb_checkpoints' \
 		'$(ROOT)/' \
-		'$(REMOTE_HOST):$(REMOTE_PATH)'
+		'$(REMOTE_HOST):$(REMOTE_PATH)/'
 
 # -----------------------------------------------------------------------------
 # rsync pull
@@ -133,5 +133,5 @@ rsync-pull:
 		--exclude='__pycache__' \
 		--exclude='.pytest_cache' \
 		--exclude='.ipynb_checkpoints' \
-		'$(REMOTE_HOST):$(REMOTE_PATH)' \
+		'$(REMOTE_HOST):$(REMOTE_PATH)/' \
 		'$(ROOT)/'
