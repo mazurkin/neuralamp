@@ -16,6 +16,6 @@
     "common": {
         "x_path": "work/input.wav",
         "y_path": "work/output.wav",
-        "delay": 0
+        "delay": 168
     }
 }

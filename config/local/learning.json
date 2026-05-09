@@ -4,17 +4,17 @@
         "representative of this!"
     ],
     "train_dataloader": {
-        "batch_size": 16,
+        "batch_size": 32,
         "shuffle": true,
         "pin_memory": true,
         "drop_last": true,
-        "num_workers": 0
+        "num_workers": 2
     },
     "val_dataloader": {},
     "trainer": {
         "accelerator": "gpu",
         "devices": 1,
-        "max_epochs": 10
+        "max_epochs": 500
     },
     "trainer_fit_kwargs": {}
 }

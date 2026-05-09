@@ -26,6 +26,7 @@
                         512
                     ],
                     "activation": "Tanh",
+                    "gated": false,
                     "head_bias": false
                 },
                 {
@@ -47,6 +48,7 @@
                         512
                     ],
                     "activation": "Tanh",
+                    "gated": false,
                     "head_bias": true
                 }
             ],
