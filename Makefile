@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 ROOT  := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-RSYNC          = rsync --archive --verbose --compress --rsh='ssh -o ClearAllForwardings=yes'
+RSYNC          = rsync --archive --verbose --compress --checksum --rsh='ssh -o ClearAllForwardings=yes'
 
 REMOTE_HOST   ?= pp-neuralamp
 REMOTE_PATH   ?= projects/neuralamp
