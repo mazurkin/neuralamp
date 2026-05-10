@@ -12,7 +12,31 @@ CONDA_ENV_NAME = neuralamp
 # notebook
 # -----------------------------------------------------------------------------
 
-.DEFAULT_GOAL = run
+.DEFAULT_GOAL = run-wavenet
+
+# -----------------------------------------------------------------------------
+# conda and linux install and configuration for a new machine
+# -----------------------------------------------------------------------------
+
+.PHONY: conda-install
+conda-install:
+	@wget -qc -O '${HOME}/miniconda.sh' 'https://repo.anaconda.com/miniconda/Miniconda3-py312_25.9.1-3-Linux-x86_64.sh'
+	@mkdir -p "${HOME}/opt"
+	@bash '${HOME}/miniconda.sh' -b -f -p "${HOME}/opt/miniconda"
+	@mkdir -p "${HOME}/.local/bin"
+	@ln -sfT "${HOME}/opt/miniconda/bin/conda" "${HOME}/.local/bin/conda"
+	@rm -vf '${HOME}/miniconda.sh'
+
+.PHONY: conda-setup
+conda-setup:
+	@conda config --system --set solver libmamba
+	@conda tos accept --override-channels --channel 'https://repo.anaconda.com/pkgs/main'
+	@conda tos accept --override-channels --channel 'https://repo.anaconda.com/pkgs/r'
+	@conda config --system --remove channels defaults
+	@conda config --system --add channels conda-forge
+	@conda config --system --add channels nvidia
+	@conda config --show-sources
+	@conda config --show channels
 
 # -----------------------------------------------------------------------------
 # conda environment
