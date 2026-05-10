@@ -1,7 +1,12 @@
 /*
 
 !/.gitignore
-!/input.wav
-!/process.sh
+
 !/captures
 !/models
+
+!/input.wav
+!/output.wav
+
+!/process.sh
+

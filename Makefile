@@ -116,6 +116,8 @@ rsync-push:
 		--exclude='__pycache__' \
 		--exclude='.pytest_cache' \
 		--exclude='.ipynb_checkpoints' \
+		--exclude='/work/models/*' \
+		--exclude='/work/output.wav' \
 		'$(ROOT)/' \
 		'$(REMOTE_HOST):$(REMOTE_PATH)/'
 
@@ -126,12 +128,11 @@ rsync-push:
 .PHONY: rsync-pull
 rsync-pull:
 	@$(RSYNC) \
-		--rsh="ssh -o ClearAllForwardings=yes" \
 		--exclude='/.git' \
 		--exclude='/.idea' \
 		--exclude='*.log' \
 		--exclude='__pycache__' \
 		--exclude='.pytest_cache' \
 		--exclude='.ipynb_checkpoints' \
-		'$(REMOTE_HOST):$(REMOTE_PATH)/' \
-		'$(ROOT)/'
+		'$(REMOTE_HOST):$(REMOTE_PATH)/work/models/' \
+		'$(ROOT)/work/models/'
