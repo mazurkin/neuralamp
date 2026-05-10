@@ -14,8 +14,8 @@
         "ny": null
     },
     "common": {
-        "x_path": "work/input.wav",
-        "y_path": "work/output.wav",
-        "delay": 168
+        "x_path": "input.wav",
+        "y_path": "output.wav",
+        "delay": 164
     }
 }

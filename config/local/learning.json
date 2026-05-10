@@ -14,7 +14,7 @@
     "trainer": {
         "accelerator": "gpu",
         "devices": 1,
-        "max_epochs": 500
+        "max_epochs": 1000
     },
     "trainer_fit_kwargs": {}
 }
