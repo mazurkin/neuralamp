@@ -97,6 +97,21 @@ tensorboard:
 # run
 # -----------------------------------------------------------------------------
 
+.PHONY: run-a2
+run-a2: export PYTHONOPTIMIZE=1
+run-a2: export PYTHONDONTWRITEBYTECODE=1
+run-a2: export PYTHONUNBUFFERED=1
+run-a2: export OMP_NUM_THREADS=1
+run-a2: export CUDA_VISIBLE_DEVICES=0
+run-a2:
+	@conda run --no-capture-output --live-stream --name "$(CONDA_ENV_NAME)" \
+		nam-full \
+			--no-plots \
+			"$(ROOT)/config/local/data.json" \
+			"$(ROOT)/config/models/a2.json" \
+			"$(ROOT)/config/local/learning.json" \
+			"$(ROOT)/work"
+
 .PHONY: run-wavenet
 run-wavenet: export PYTHONOPTIMIZE=1
 run-wavenet: export PYTHONDONTWRITEBYTECODE=1
@@ -149,8 +164,8 @@ rsync-push:
 # rsync pull
 # -----------------------------------------------------------------------------
 
-.PHONY: rsync-pull
-rsync-pull:
+.PHONY: rsync-pull-models
+rsync-pull-models:
 	@$(RSYNC) \
 		--exclude='/.git' \
 		--exclude='/.idea' \
