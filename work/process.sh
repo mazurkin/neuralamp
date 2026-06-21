@@ -67,7 +67,7 @@ function build_model() {
         nam-full \
             --no-plots \
             "${PACKAGE_DIR}/config/local/data.json" \
-            "${PACKAGE_DIR}/config/models/wavenet.json" \
+            "${PACKAGE_DIR}/config/models/a2.json" \
             "${PACKAGE_DIR}/config/local/learning.json" \
             "${MODEL_FOLDER}"
 }

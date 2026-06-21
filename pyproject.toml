@@ -29,7 +29,7 @@ torchmetrics = "1.8.2"
 litlogger = "2026.3.17"
 
 [tool.poetry.group.nam.dependencies]
-neural-amp-modeler = "0.12.3"
+neural-amp-modeler = "0.13.0"
 
 [tool.poetry.group.audio.dependencies]
 wavio = "0.0.9"
